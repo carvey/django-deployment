@@ -43,6 +43,11 @@ server {
     #}
 }
 
+server {
+        server_name www.{{ site.domain }};
+        return 301 $scheme://{{ site.domain }}$request_uri;
+}
+
 {% endfor %}
 
 server {
